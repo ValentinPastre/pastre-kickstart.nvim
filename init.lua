@@ -683,8 +683,9 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
+
         --
-        jdtls = {},
+        --jdtls = {},
 
         lua_ls = {
           -- cmd = { ... },
@@ -742,6 +743,12 @@ require('lazy').setup({
     'mfussenegger/nvim-jdtls',
     ft = { 'java' },
     dependencies = { 'neovim/nvim-lspconfig' },
+  },
+
+  {
+    'mrcjkb/haskell-tools.nvim',
+    version = '^6', -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
 
   { -- Autoformat
@@ -807,13 +814,6 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          {
-            'rafamadriz/friendly-snippets',
-            config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
-              require('luasnip.loaders.from_vscode').lazy_load { paths = { '~/.config/nvim/snippets' } }
-            end,
-          },
         },
         opts = {},
       },
