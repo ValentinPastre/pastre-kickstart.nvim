@@ -916,8 +916,11 @@ require('lazy').setup({
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = true
+      vim.o.background = 'light'
       vim.g.gruvbox_material_background = 'medium'
+      vim.g.gruvbox_material_transparent_background = 0
       vim.g.gruvbox_material_foreground = 'original'
+      vim.g.gruvbox_material_better_performance = 1
       vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
@@ -1044,6 +1047,13 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+  {
+    'startup-nvim/startup.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-file-browser.nvim' },
+    config = function()
+      require('startup').setup { theme = 'dashboard' }
+    end,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
