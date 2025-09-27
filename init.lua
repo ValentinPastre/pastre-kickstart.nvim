@@ -916,7 +916,7 @@ require('lazy').setup({
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = true
-      vim.o.background = 'light'
+      --vim.o.background = 'light'
       vim.g.gruvbox_material_background = 'medium'
       vim.g.gruvbox_material_transparent_background = 0
       vim.g.gruvbox_material_foreground = 'original'
