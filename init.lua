@@ -689,7 +689,7 @@ require('lazy').setup({
 
         lua_ls = {
           -- cmd = { ... },
-          -- filetypes = { ... },
+          filetypes = { 'lua' },
           -- capabilities = {},
           settings = {
             Lua = {
