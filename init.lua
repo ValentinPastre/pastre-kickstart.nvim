@@ -908,7 +908,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'tokyonight-night'
     end,
   },]]
-  {
+  --[[{
     'sainnhe/gruvbox-material',
     lazy = false,
     priority = 1000,
@@ -924,19 +924,23 @@ require('lazy').setup({
       vim.g.gruvbox_material_float_style = 'none'
       vim.cmd.colorscheme 'gruvbox-material'
     end,
-  },
-  --[[{
-    'sainnhe/sonokai',
+  },]]
+  {
+    'sainnhe/everforest',
     lazy = false,
     priority = 1000,
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
-      vim.g.sonokai_enable_italic = true
-      vim.g.sonokai_style = 'shusia'
-      vim.cmd.colorscheme 'sonokai'
+      vim.g.everforest_enable_italic = true
+      --vim.o.background = 'light'
+      vim.g.everforest_background = 'hard'
+      vim.g.everforest_transparent_background = 0
+      vim.g.everforest_better_performance = 1
+      vim.g.everforest_float_style = 'blend'
+      vim.cmd.colorscheme 'everforest'
     end,
-  },]]
+  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
