@@ -908,7 +908,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'tokyonight-night'
     end,
   },]]
-  --[[{
+  {
     'sainnhe/gruvbox-material',
     lazy = false,
     priority = 1000,
@@ -921,11 +921,11 @@ require('lazy').setup({
       vim.g.gruvbox_material_transparent_background = 0
       vim.g.gruvbox_material_foreground = 'original'
       vim.g.gruvbox_material_better_performance = 1
-      vim.g.gruvbox_material_float_style = 'none'
+      vim.g.gruvbox_material_float_style = 'blend'
       vim.cmd.colorscheme 'gruvbox-material'
     end,
-  },]]
-  {
+  },
+  --[[{
     'sainnhe/everforest',
     lazy = false,
     priority = 1000,
@@ -940,7 +940,7 @@ require('lazy').setup({
       vim.g.everforest_float_style = 'blend'
       vim.cmd.colorscheme 'everforest'
     end,
-  },
+  },]]
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
