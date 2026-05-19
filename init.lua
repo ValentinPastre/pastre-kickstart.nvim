@@ -771,7 +771,7 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = true, cpp = false }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
@@ -848,6 +848,7 @@ require('lazy').setup({
         ['<Tab>'] = { 'accept', 'fallback' },
         -- Alt+Tab conserva el comportamiento anterior de Tab
         ['<A-Tab>'] = { 'snippet_forward', 'fallback' },
+        ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
@@ -1001,6 +1002,7 @@ require('lazy').setup({
         'python',
         'bash',
         'c',
+        'cpp',
         'diff',
         'html',
         'lua',
