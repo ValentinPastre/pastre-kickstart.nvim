@@ -740,12 +740,6 @@ require('lazy').setup({
   },
 
   {
-    'mfussenegger/nvim-jdtls',
-    ft = { 'java' },
-    dependencies = { 'neovim/nvim-lspconfig' },
-  },
-
-  {
     'mrcjkb/haskell-tools.nvim',
     version = '^6', -- Recommended
     lazy = false, -- This plugin is already lazy
@@ -909,39 +903,6 @@ require('lazy').setup({
       vim.cmd.colorscheme 'tokyonight-night'
     end,
   },]]
-  {
-    'sainnhe/gruvbox-material',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      --vim.o.background = 'light'
-      vim.g.gruvbox_material_background = 'medium'
-      vim.g.gruvbox_material_transparent_background = 0
-      vim.g.gruvbox_material_foreground = 'original'
-      vim.g.gruvbox_material_better_performance = 1
-      vim.g.gruvbox_material_float_style = 'blend'
-      vim.cmd.colorscheme 'gruvbox-material'
-    end,
-  },
-  --[[{
-    'sainnhe/everforest',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.everforest_enable_italic = true
-      --vim.o.background = 'light'
-      vim.g.everforest_background = 'hard'
-      vim.g.everforest_transparent_background = 0
-      vim.g.everforest_better_performance = 1
-      vim.g.everforest_float_style = 'blend'
-      vim.cmd.colorscheme 'everforest'
-    end,
-  },]]
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -1052,19 +1013,12 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
-  {
-    'startup-nvim/startup.nvim',
-    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-file-browser.nvim' },
-    config = function()
-      require('startup').setup { theme = 'dashboard' }
-    end,
-  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
